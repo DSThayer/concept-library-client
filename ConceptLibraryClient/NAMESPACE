@@ -2,6 +2,7 @@
 
 export(getLogin)
 export(get_concept)
+export(get_working_set)
 import(GetoptLong)
 import(dplyr)
 import(tcltk)

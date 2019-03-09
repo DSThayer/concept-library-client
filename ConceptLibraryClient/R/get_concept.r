@@ -19,11 +19,7 @@ get_concept=function(url,id,user=NA,password=NA)
     details=getLogin(userName=user);
     user=details[1];
     password=details[2];
-  }  
-
-  print(user);
-  print(password);
-  
+  }    
   
   #The URL might already have the API address, or it may or may not have an ending /.
   #Use a replace to make sure we have a consistent URL.
