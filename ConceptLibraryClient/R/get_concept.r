@@ -38,6 +38,12 @@ get_concept=function(url,id,user=NA,password=NA)
 
     json_concept <- concept$get();
     
+    if (json_concept$status_code != 200) {
+      error=paste(json_concept$status_http(),collapse=' ');
+      cid=id;
+      stop(qq("Error retrieving concept @{cid}: @{error}"));
+    }
+    
     concept_table <- data.frame(jsonlite::fromJSON(json_concept$parse("UTF-8")));
     
     #adding the two columns to the table(concept_name and concept_id)
@@ -47,23 +53,7 @@ get_concept=function(url,id,user=NA,password=NA)
     #having the finalDataFrame
     concept_data_frame = data.frame(concept_table);
     
-    #checking there are 4 columns in the dataframe and as well
-    #if the columns match the names that we have
-    if (ncol(concept_data_frame) == 3 &&
-          ("code" %in% colnames(concept_data_frame)) &&
-          ("id" %in% colnames(concept_data_frame)) &&
-          ("description" %in% colnames(concept_data_frame))
-    )
-    {
-      results <<- rbind(results, concept_data_frame);
-    }
-    #else output a friendly messagge
-    else
-    {
-      cat(
-        "Concept ", id, "was not added due to either permission or different structure.\n"
-      )
-    }
+    results <<- rbind(results, concept_data_frame);
     
   });
   

@@ -31,6 +31,11 @@ get_working_set=function(url,id,user=NA,password=NA)
   ws = crul::HttpClient$new(url=ws_url,auth = crul::auth(user = user, pwd = password));
 
   json_ws = ws$get();
+  
+  if (json_ws$status_code != 200) {
+    stop(paste(json_ws$status_http(),collapse=' '));
+  }
+  
   ws_df = data.frame(jsonlite::fromJSON(json_ws$parse("UTF-8")));
   
   #To do error handling.
