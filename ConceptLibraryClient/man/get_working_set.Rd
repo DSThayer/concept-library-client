@@ -4,16 +4,16 @@
 \alias{get_working_set}
 \title{get_working_set}
 \usage{
-get_working_set(url, id, user = NA, password = NA)
+get_working_set(url, id, version = NA, auth = NA)
 }
 \arguments{
 \item{url}{URL of the concept library application}
 
-\item{id}{A vector of one or more concept IDs to return}
+\item{id}{A working set ID to return}
 
-\item{user}{User name for authentication (if username and password left blank, will pop up a login box)}
+\item{version}{Version of working set to return (NA = latest version)}
 
-\item{password}{Password for authentication}
+\item{auth}{Credentials for API call (create with create_auth() or leave blank to be prompted)}
 }
 \value{
 A data frame with working set contents
@@ -22,5 +22,5 @@ A data frame with working set contents
 Retrieve a single working set from the Concept Library
 }
 \examples{
-get_working_set(url='',id=1,user='username', password='*password*')
+get_working_set(url='https://conceptlibrary.saildatabank.com',id=1,auth=credentials)
 }
