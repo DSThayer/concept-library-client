@@ -12,8 +12,11 @@
 #' @examples details = getLogin();
 #' @import tcltk
 
-getLogin<-function(userName=''){  
+getLogin<-function(userName=NA){  
 	wnd<-tktoplevel();
+	
+	if (is.na(userName)) { userName=''; }
+	
 	tclVar(userName)->user;
 	tclVar("")->passVar;
 	#Label  

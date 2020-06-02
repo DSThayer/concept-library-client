@@ -4,7 +4,7 @@
 \alias{getLogin}
 \title{getLogin}
 \usage{
-getLogin(userName = "")
+getLogin(userName = NA)
 }
 \arguments{
 \item{userName}{A user name (optional). If provided, the login box will be prepopulated with this user name.}

@@ -1,8 +1,8 @@
 Package: ConceptLibraryClient
 Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Version: 0.0.1.1
+Authors@R: person("Daniel", "Thayer", email = "daniel.s.thayer@gmail.com", role = c("aut", "cre"))
+Description: API client for Concept Library web application. Allows managing clinical code lists for use in health research.
 Depends: R (>= 3.1.0)
 Imports:
   GetoptLong,
@@ -10,7 +10,7 @@ Imports:
   jsonlite,
   tcltk,
   dplyr
-License: What license is it under?
+License: GPL v3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

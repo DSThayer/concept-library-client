@@ -13,7 +13,10 @@ library('testthat');
 
 #setwd('./ConceptLibraryClient');
 
+#usethis::proj_set(path='./ConceptLibraryClient',force=TRUE)
+#usethis::use_testthat()
 
-
-document(pkg='./ConceptLibraryClient');
-install('ConceptLibraryClient');
+document();
+install();
+build();
+devtools::test()
